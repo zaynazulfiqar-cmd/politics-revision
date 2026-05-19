@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Level Politics Revision — Print Version</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --p1: #b8860b;
+    --p2: #1a5fa8;
+    --p3: #5b21b6;
+    --border: #d1d5db;
+    --muted: #6b7280;
+    --light-p1: #fef9ee;
+    --light-p2: #eff6ff;
+    --light-p3: #f5f3ff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff;
+    color: #111;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  /* SCREEN-ONLY CONTROLS */
+  .screen-only {
+    display: block;
+    background: #f9fafb;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .controls-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .controls-inner h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #111;
+  }
+
+  .controls-inner h1 span { color: var(--p1); }
+
+  .btn-group { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  .btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: #fff;
+    color: #374151;
+    transition: all 0.15s;
+  }
+
+  .btn:hover { background: #f3f4f6; }
+  .btn.primary { background: #111; color: #fff; border-color: #111; }
+  .btn.primary:hover { background: #333; }
+  .btn.p1 { border-color: var(--p1); color: var(--p1); }
+  .btn.p2 { border-color: var(--p2); color: var(--p2); }
+  .btn.p3 { border-color: var(--p3); color: var(--p3); }
+
+  /* MAIN CONTENT */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  /* PAPER HEADER */
+  .paper-header {
+    margin: 2rem 0 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    page-break-before: always;
+  }
+
+  .paper-header:first-child { page-break-before: avoid; margin-top: 0; }
+
+  .paper-header.p1 { background: var(--light-p1); border-left: 4px solid var(--p1); }
+  .paper-header.p2 { background: var(--light-p2); border-left: 4px solid var(--p2); }
+  .paper-header.p3 { background: var(--light-p3); border-left: 4px solid var(--p3); }
+
+  .paper-header .paper-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .paper-header.p1 .paper-label { color: var(--p1); }
+  .paper-header.p2 .paper-label { color: var(--p2); }
+  .paper-header.p3 .paper-label { color: var(--p3); }
+
+  .paper-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #111;
+  }
+
+  /* TOPIC SECTION */
+  .topic { margin-bottom: 0.5rem; }
+
+  .topic-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 1.5rem 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* EXAMINER BOX */
+  .examiner-box {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fafafa;
+    page-break-inside: avoid;
+  }
+
+  .examiner-box h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111;
+  }
+
+  .examiner-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .examiner-box li {
+    font-size: 0.82rem;
+    color: #374151;
+    padding: 0.15rem 0 0.15rem 1rem;
+    position: relative;
+  }
+
+  .examiner-box li::before { content: '→'; position: absolute; left: 0; color: var(--muted); }
+
+  .examiner-judgement {
+    margin-top: 0.6rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: #374151;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* EXAMPLE CARD */
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    page-break-inside: avoid;
+    overflow: hidden;
+  }
+
+  .card-top {
+    padding: 0.75rem 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-top.p1 { background: var(--light-p1); }
+  .card-top.p2 { background: var(--light-p2); }
+  .card-top.p3 { background: var(--light-p3); }
+
+  .card-top-meta { flex: 1; }
+
+  .card-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .year-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+  }
+
+  .year-badge.p1 { color: var(--p1); background: #fef3cd; border: 1px solid #f6d86b; }
+  .year-badge.p2 { color: var(--p2); background: #dbeafe; border: 1px solid #93c5fd; }
+  .year-badge.p3 { color: var(--p3); background: #ede9fe; border: 1px solid #c4b5fd; }
+
+  .subtopic {
+    font-size: 0.65rem;
+    color: var(--muted);
+    background: #f3f4f6;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+  }
+
+  .card-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #111;
+    line-height: 1.3;
+  }
+
+  .card-body { padding: 0.75rem 1rem; }
+
+  .detail-row { margin-bottom: 0.6rem; }
+  .detail-row:last-child { margin-bottom: 0; }
+
+  .detail-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .detail-text {
+    font-size: 0.82rem;
+    color: #374151;
+    line-height: 1.55;
+  }
+
+  .essay-box {
+    background: #f9fafb;
+    border-left: 3px solid;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: #374151;
+    line-height: 1.55;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .essay-box.p1 { border-color: var(--p1); }
+  .essay-box.p2 { border-color: var(--p2); }
+  .essay-box.p3 { border-color: var(--p3); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    background: #f3f4f6;
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* PRINT STYLES */
+  @media print {
+    .screen-only { display: none !important; }
+    body { font-size: 10pt; }
+    .content { padding: 0; max-width: 100%; }
+    .paper-header { page-break-before: always; }
+    .paper-header:first-child { page-break-before: avoid; }
+    .card { page-break-inside: avoid; }
+    .examiner-box { page-break-inside: avoid; }
+
+    /* Only show selected topics if a filter is active */
+    .topic[data-hidden="true"] { display: none; }
+  }
+
+  /* FILTER ACTIVE STATE */
+  .topic[data-hidden="true"] { display: none; }
+
+  /* PAGE TITLE (print only) */
+  .print-title {
+    display: none;
+    text-align: center;
+    padding: 1rem 0 1.5rem;
+    border-bottom: 2px solid #111;
+    margin-bottom: 1.5rem;
+  }
+
+  @media print {
+    .print-title { display: block; }
+  }
+
+  .print-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  .print-title p { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
+</style>
+</head>
+<body>
+
+<!-- SCREEN-ONLY CONTROLS -->
+<div class="screen-only">
+  <div class="controls-inner">
+    <h1>Edexcel Politics <span>·</span> Print Version</h1>
+    <div class="btn-group">
+      <button class="btn" onclick="showAll()">Show All</button>
+      <button class="btn p1" onclick="filterPaper('p1')">Paper 1 Only</button>
+      <button class="btn p2" onclick="filterPaper('p2')">Paper 2 Only</button>
+      <button class="btn p3" onclick="filterPaper('p3')">Paper 3 Only</button>
+      <button class="btn primary" onclick="window.print()">🖨️ Print / Save PDF</button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="print-title">
+    <h1>A-Level Politics — Examples Bank</h1>
+    <p>Edexcel · Papers 1, 2 &amp; 3 · Revision Notes</p>
+  </div>
+
+  <!-- ===== PAPER 1 ===== -->
+
+  <div class="paper-header p1" data-paper="p1">
+    <div class="paper-label">Paper 1 — UK Politics</div>
+    <h2>Democracy &amp; Participation</h2>
+  </div>
+
+  <div class="topic" data-paper="p1">
+
+    <div class="examiner-box">
+      <h3>🎯 Examiner-Style Judgement</h3>
+      <ul>
+        <li><strong>2024 general election turnout (59.7%)</strong> — best for participation crisis</li>
+        <li><strong>Voter ID in 2024</strong> — best for barriers to participation</li>
+        <li><strong>Votes at 16 Bill 2024–26</strong> — best for suffrage debates</li>
+        <li><strong>E-petition for a new general election (2.9m signatures)</strong> — best for direct democracy</li>
+        <li><strong>Just Stop Oil / junior doctors' strikes</strong> — best for participation outside elections</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Representative Democracy</span></div>
+          <div class="card-title">2024 UK General Election — Representative Democracy &amp; Low Turnout</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Labour won a large Commons majority in the 2024 general election, but turnout fell to 59.7% — the lowest since 2001. The Electoral Commission noted that negative views of party politics contributed to people choosing not to vote.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the UK remains a representative democracy (citizens choose MPs), but also demonstrates a possible participation crisis. Many citizens are disengaged from formal politics.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p1">The UK remains a representative democracy because citizens choose MPs through general elections. However, the 2024 election shows a weakness in participation, as turnout fell to 59.7%, suggesting many citizens are disengaged from formal politics.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">representative democracy</span><span class="tag">participation crisis</span><span class="tag">legitimacy</span><span class="tag">low turnout</span><span class="tag">democratic deficit</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Voter ID</span></div>
+          <div class="card-title">Elections Act 2022 — Voter ID Requirements</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The 2024 general election was the first where all voters had to show accepted photographic ID at polling stations. The Electoral Commission found approximately 16,000 people were unable to vote in person without accepted ID. Awareness was lower among 18–24-year-olds and ethnic minority communities.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows that legal barriers may reduce participation, especially for groups already less likely to vote. The Electoral Commission also found only 0.08% of those who tried to vote were turned away, so the impact was real but limited in numerical terms.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">participation crisis</span><span class="tag">access to voting</span><span class="tag">democratic rights</span><span class="tag">electoral reform</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2022</span><span class="subtopic">Electoral Registration</span></div>
+          <div class="card-title">7–8 Million People Not Correctly Registered</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Electoral Commission estimated around 7–8 million people were not correctly registered at their current address in December 2022.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Participation is limited not only by apathy but also by practical registration problems. Supports reform proposals such as automatic voter registration.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">participation barriers</span><span class="tag">electoral reform</span><span class="tag">democratic deficit</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024–26</span><span class="subtopic">Franchise / Suffrage</span></div>
+          <div class="card-title">Votes at 16 — Representation of the People Bill</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">As of April 2026, the UK Government introduced a bill to lower the voting age to 16 for all reserved elections. Voting is already 16 for Scottish Parliament, Senedd and local elections in Scotland and Wales.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">A modern example of franchise debates. Arguments for: 16-year-olds affected by government decisions, consistency with Scotland/Wales. Arguments against: questions over maturity, possible partisan motivations.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">suffrage</span><span class="tag">franchise extension</span><span class="tag">participation</span><span class="tag">electoral reform</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Direct Democracy</span></div>
+          <div class="card-title">E-Petition for a New General Election — 2.9 Million Signatures</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">A 2024 e-petition calling for a new general election received over 2.9 million signatures and was debated in Westminster Hall on 6 January 2025. The government rejected the request.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows citizens can participate between elections. However, even 2.9 million signatures did not force policy change — demonstrating the limits of e-petitions as a form of direct democracy.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">direct democracy</span><span class="tag">participation beyond voting</span><span class="tag">limits of petitions</span><span class="tag">representative vs direct democracy</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2023–24</span><span class="subtopic">Pressure Groups</span></div>
+          <div class="card-title">Just Stop Oil — Outsider Pressure Group Activity</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Just Stop Oil used disruptive tactics including blocking roads and targeting public events. In 2024, several activists received long sentences linked to planned M25 disruption.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Pressure groups widen participation beyond elections, but disruptive tactics can reduce public support and raise questions about whether some methods damage democracy.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">pressure groups</span><span class="tag">outsider groups</span><span class="tag">protest rights</span><span class="tag">participation beyond elections</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2023–24</span><span class="subtopic">Trade Unions</span></div>
+          <div class="card-title">Junior Doctors' Strikes — Collective Participation</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Junior doctors in England began strike action in March 2023, with the BMA calling for pay restoration.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Trade unions allow collective participation outside elections. However, strikes can conflict with the wider public interest by disrupting services.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">trade unions</span><span class="tag">collective participation</span><span class="tag">participation beyond elections</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2025</span><span class="subtopic">Public Trust</span></div>
+          <div class="card-title">Electoral Commission Public Attitudes Research 2025</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Confidence that elections are well run was near an all-time high, but over half of respondents felt elected representatives did not care about people like them.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">A balanced example: people may trust the running of elections but still feel disconnected from politicians. The UK may not have a crisis in electoral administration, but it faces a problem of political trust.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">political trust</span><span class="tag">participation crisis</span><span class="tag">democratic legitimacy</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ELECTORAL SYSTEMS -->
+  <div class="paper-header p1" data-paper="p1">
+    <div class="paper-label">Paper 1 — UK Politics</div>
+    <h2>Electoral Systems &amp; Referendums</h2>
+  </div>
+
+  <div class="topic" data-paper="p1">
+
+    <div class="examiner-box">
+      <h3>🎯 Examiner-Style Judgement</h3>
+      <ul>
+        <li><strong>2024 general election</strong> — best for FPTP, disproportionality and strong government</li>
+        <li><strong>Scottish Parliament 2021</strong> — best for AMS</li>
+        <li><strong>Northern Ireland Assembly 2022</strong> — best for STV</li>
+        <li><strong>EU referendum 2016</strong> — best for direct democracy and participation</li>
+        <li><strong>Scottish independence referendum 2014</strong> — best for constitutional referendums</li>
+        <li><strong>London mayoral election 2024</strong> — best for replacement of Supplementary Vote with FPTP</li>
+      </ul>
+      <div class="examiner-judgement">FPTP is strong for decisive government but weak for proportional representation, while referendums are strong for direct democracy but weak because they can oversimplify complex issues and create division.</div>
+    </div>
+
+    <div class="topic-title">A — First Past the Post</div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">FPTP</span></div>
+          <div class="card-title">Labour Won Huge Majority on Only 33.7% of the Vote</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">In the 2024 UK general election, Labour won a large Commons majority with only 33.7% of the national vote share. The Electoral Reform Society noted smaller parties took over 40% of the vote while Labour and the Conservatives had their lowest combined vote share in the era of universal suffrage.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">FPTP can create strong single-party government, but with only 33.7% of the vote, it exaggerates support for the winning party and damages proportional representation.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">FPTP strengths/weaknesses</span><span class="tag">proportionality</span><span class="tag">strong government</span><span class="tag">democratic legitimacy</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">FPTP · Smaller Parties</span></div>
+          <div class="card-title">Reform UK — FPTP Disadvantages Smaller Parties</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Reform UK won a significant share of the national vote but only 5 seats in 2024, showing how FPTP punishes parties with geographically spread support.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows FPTP distorts representation. Even with few seats, Reform UK can still pressure the Conservatives by threatening to split the right-wing vote.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">FPTP weaknesses</span><span class="tag">wasted votes</span><span class="tag">minor parties</span></div></div>
+      </div>
+    </div>
+
+    <div class="topic-title">B — Alternative Electoral Systems</div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2021</span><span class="subtopic">AMS</span></div>
+          <div class="card-title">Scottish Parliament 2021 — Additional Member System</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The SNP won 64 of 129 seats; Conservatives 31, Labour 22, Greens 8, Liberal Democrats 4. Turnout was 63.5%. The regional list vote corrects some disproportionality from constituency results.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">AMS is more proportional than FPTP. However, AMS is not perfectly proportional — the SNP came very close to a majority through strong constituency performance.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">AMS vs FPTP</span><span class="tag">proportionality</span><span class="tag">voter choice</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2022</span><span class="subtopic">STV</span></div>
+          <div class="card-title">Northern Ireland Assembly 2022 — Single Transferable Vote</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Sinn Féin became the largest party for the first time; the DUP was second; Alliance achieved its best-ever result. Voters rank candidates in order of preference.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">STV produces more proportional and pluralistic outcomes. However, it is more complex than FPTP, takes longer to count, and may lead to power-sharing arrangements.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">STV</span><span class="tag">proportional representation</span><span class="tag">voter choice</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Supplementary Vote</span></div>
+          <div class="card-title">London Mayoral Election 2024 — SV Replaced by FPTP</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The 2024 London mayoral election was the first held under FPTP, after the Elections Act 2022 replaced the Supplementary Vote system. Turnout was 40.5%.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows a recent shift away from preferential voting. Supporters argue FPTP is easier to understand; critics argue it reduces voter choice.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Supplementary Vote</span><span class="tag">electoral reform</span><span class="tag">FPTP</span></div></div>
+      </div>
+    </div>
+
+    <div class="topic-title">C — Referendums</div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2016</span><span class="subtopic">Referendum</span></div>
+          <div class="card-title">EU Referendum 2016 — Leave Won 51.9% to 48.1%</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">17,410,742 voted Leave; 16,141,241 voted Remain. Turnout was 72.2% — higher than many recent general elections.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows referendums can increase participation on major constitutional issues. Also shows division — the narrow result created years of parliamentary conflict, demonstrating that referendums can deepen division rather than create consensus.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">direct democracy</span><span class="tag">referendums</span><span class="tag">participation</span><span class="tag">sovereignty</span><span class="tag">constitutional change</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2014</span><span class="subtopic">Referendum</span></div>
+          <div class="card-title">Scottish Independence Referendum 2014 — 84.6% Turnout</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Scotland voted 55.3% No, 44.7% Yes, with extraordinary turnout of 84.6%.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows democratic strength of referendums — very high turnout and direct decision on a major constitutional question. However, the SNP continued to push for another vote, showing referendums do not always end constitutional debates.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">referendums</span><span class="tag">turnout</span><span class="tag">direct democracy</span><span class="tag">constitutional change</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1">
+        <div class="card-top-meta">
+          <div class="card-badges"><span class="year-badge p1">2011</span><span class="subtopic">Referendum</span></div>
+          <div class="card-title">AV Referendum 2011 — UK Rejected Changing FPTP</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Voters rejected replacing FPTP with the Alternative Vote for Westminster elections.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the public previously rejected changing the Westminster electoral system. However, AV is not proportional, so this only proves voters rejected AV — not that they prefer FPTP over all PR systems.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">electoral reform</span><span class="tag">AV</span><span class="tag">referendums</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- POLITICAL PARTIES -->
+  <div class="paper-header p1" data-paper="p1">
+    <div class="paper-label">Paper 1 — UK Politics</div>
+    <h2>Political Parties</h2>
+  </div>
+
+  <div class="topic" data-paper="p1">
+
+    <div class="examiner-box">
+      <h3>🎯 Examiner-Style Judgement</h3>
+      <ul>
+        <li><strong>2024 general election results</strong> — best for party competition and minor parties</li>
+        <li><strong>Labour's 2024 manifesto</strong> — best for Labour ideology and catch-all politics</li>
+        <li><strong>Conservative 2024 manifesto</strong> — best for Conservative ideology and tax policy</li>
+        <li><strong>Kemi Badenoch leadership election, 2024</strong> — best for internal democracy</li>
+        <li><strong>Reform UK and Greens in 2024</strong> — best for smaller parties and FPTP limits</li>
+        <li><strong>Party donations in 2024</strong> — best for party funding debates</li>
+      </ul>
+      <div class="examiner-judgement">UK parties still matter because they provide choice, form governments and organise political debate. However, they are weaker as mass membership organisations, and FPTP means smaller parties often influence debate more than they influence Parliament.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Labour</span></div><div class="card-title">Labour's 2024 Manifesto — Centre-Left Moderation</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Labour promised not to increase National Insurance, Income Tax rates, or VAT. It also included a "New Deal for Working People" with stronger workers' rights — showing a shift from the Corbyn era towards a centrist, economically responsible position.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows Labour under Starmer as a catch-all party moderating ideology for electoral success, while retaining social democratic elements.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Labour ideology</span><span class="tag">social democracy</span><span class="tag">catch-all parties</span><span class="tag">party moderation</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Conservatives</span></div><div class="card-title">Conservative 2024 Manifesto — Tax Cuts and New Right</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Conservative manifesto promised to abolish the main rate of self-employed National Insurance and a "Triple Lock Plus" for pensioners, showing traditional support for lower taxation and individual responsibility.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Conservative Party's continued link to New Right ideas. Useful for comparing ideological positions between Labour and Conservative.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Conservative ideology</span><span class="tag">New Right</span><span class="tag">tax and state intervention</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Conservative Leadership</span></div><div class="card-title">Kemi Badenoch Elected Conservative Leader — November 2024</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Badenoch defeated Robert Jenrick by 12,418 votes in the members' ballot on 2 November 2024 (Institute for Government). The contest showed divisions over immigration, culture, tax and the role of the state.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows internal party democracy — members, not just MPs, chose the leader. However, leadership contests after major defeats can also expose party disunity.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">internal party democracy</span><span class="tag">Conservative divisions</span><span class="tag">party leadership</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Liberal Democrats</span></div><div class="card-title">Liberal Democrats Won 72 Seats in 2024</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Lib Dems' best result in over a century, showing third parties can succeed under FPTP through concentrated, targeted local campaigning. The party continued to argue for proportional representation.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows smaller parties can succeed under FPTP if their vote is geographically concentrated. However, they remain far smaller than the two main parties, showing FPTP still limits full multi-party politics at Westminster.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Liberal Democrat ideology</span><span class="tag">minor parties</span><span class="tag">FPTP limits</span><span class="tag">electoral reform</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Minor Parties</span></div><div class="card-title">Reform UK — 5 Seats but Over 4 Million Votes</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Reform UK won 5 seats including Nigel Farage winning Clacton, but received far more votes than seats — a clear example of FPTP's disproportionality.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows how minor parties can influence political debate even with few seats. Also a clear example of FPTP's disproportionality.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">minor parties</span><span class="tag">populism</span><span class="tag">FPTP limits</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Party Funding</span></div><div class="card-title">£97.75 Million in Party Donations and Public Funds in 2024</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Electoral Commission reported UK political parties accepted £97.75 million in donations and public funds in 2024. Under PPERA 2000, donations and loans are regulated and certain donations must be reported.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Party funding is controversial because large donations can create concerns about unequal influence. Regulation exists, but questions remain about whether wealthy donors gain political influence.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">party funding</span><span class="tag">transparency</span><span class="tag">democratic integrity</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VOTING BEHAVIOUR -->
+  <div class="paper-header p1" data-paper="p1">
+    <div class="paper-label">Paper 1 — UK Politics</div>
+    <h2>Voting Behaviour &amp; the Media</h2>
+  </div>
+
+  <div class="topic" data-paper="p1">
+
+    <div class="examiner-box">
+      <h3>🎯 1979 vs 1997 Comparison</h3>
+      <ul>
+        <li><strong>1979</strong> — Valence issues (Winter of Discontent), class voting still important, Thatcher's decisive leadership</li>
+        <li><strong>1997</strong> — Class dealignment, New Labour image, Blair vs Major, The Sun switched to Labour</li>
+        <li><strong>2019</strong> — Red Wall gains, Brexit, partisan dealignment</li>
+        <li><strong>2024</strong> — Online media overtook TV; class further weakened as predictor</li>
+      </ul>
+      <div class="examiner-judgement">Short-term factors such as leadership image and valence issues have become more important, while class has weakened as a predictor. Age is now one of the strongest dividing lines, especially since 2017.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">1979</span><span class="subtopic">Valence Issues</span></div><div class="card-title">1979 — Thatcher, Conservatives and the Winter of Discontent</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Conservatives won 43.9% of the vote (339 seats) vs Labour 36.9% (269 seats). Turnout around 76%. The election followed the Winter of Discontent — strikes and economic problems damaged Labour's competence.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the importance of valence issues. Also shows the beginning of class dealignment — some skilled working-class voters moved towards Thatcher, attracted by home ownership and lower taxation.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">valence issues</span><span class="tag">leadership</span><span class="tag">class voting</span><span class="tag">media influence</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">1997</span><span class="subtopic">Class Dealignment</span></div><div class="card-title">1997 Labour Landslide — New Labour and Class Dealignment</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Labour won 418 seats — its largest majority since 1945. Blair rebranded Labour as "New Labour", targeting middle-class voters. The Sun switched from supporting Conservatives to backing Blair in March 1997.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Strong example of class dealignment — Labour won by appealing beyond its traditional working-class base. The Sun's switch shows press influence, but Labour was already far ahead in polls, so the media may have reflected rather than caused the shift.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p1">The media reinforced Labour's image as electable and helped shape public perceptions, but Labour's victory was mainly caused by a combination of New Labour's moderation, Blair's leadership and Conservative weakness.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">class dealignment</span><span class="tag">leadership</span><span class="tag">valence voting</span><span class="tag">media influence</span><span class="tag">party image</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2019</span><span class="subtopic">Region / Brexit</span></div><div class="card-title">2019 — Conservative "Red Wall" Gains and Brexit</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Johnson's Conservatives won several historically Labour Red Wall seats in the North and Midlands by promising to "Get Brexit Done".</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows class and partisan dealignment — many traditionally Labour seats switched Conservative due to Brexit, leadership and dissatisfaction with Corbyn.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">class dealignment</span><span class="tag">region</span><span class="tag">Brexit</span><span class="tag">partisan dealignment</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">1992</span><span class="subtopic">Media</span></div><div class="card-title">"It's The Sun Wot Won It" — 1992</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">After the 1992 Conservative victory, The Sun claimed credit with its famous headline and aggressive attacks on Neil Kinnock during the campaign.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Key example for media influence, but also its limits — newspapers often support parties already likely to appeal to their readers, so they may follow public opinion rather than create it.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">media influence</span><span class="tag">newspapers</span><span class="tag">limits of media power</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2017</span><span class="subtopic">Age</span></div><div class="card-title">2017 — Age Becomes a Major Dividing Line</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Younger voters were significantly more likely to support Labour under Corbyn; older voters more likely to support the Conservatives under May.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Age has become more important than traditional class in explaining voting behaviour. Brexit, education, region and leadership also matter — age alone does not explain everything.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">age</span><span class="tag">voting behaviour</span><span class="tag">class dealignment</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p1"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p1">2024</span><span class="subtopic">Social Media</span></div><div class="card-title">Online News Overtook TV in 2024</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Ofcom's 2024 news research found 71% of UK adults used online sources for news vs 70% using TV. Social media was used by 52% of adults for news.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Online media does not send one clear message — it creates personalised content, echo chambers and misinformation risks, making media influence more fragmented.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">social media</span><span class="tag">media influence</span><span class="tag">modern campaigning</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== PAPER 2 ===== -->
+
+  <div class="paper-header p2" data-paper="p2">
+    <div class="paper-label">Paper 2 — UK Government</div>
+    <h2>The UK Constitution</h2>
+  </div>
+
+  <div class="topic" data-paper="p2">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Miller v Prime Minister, 2019</strong> — rule of law, judicial power, uncodified uncertainty</li>
+        <li><strong>Dissolution and Calling of Parliament Act 2022</strong> — flexibility, parliamentary sovereignty</li>
+        <li><strong>Human Rights Act 1998</strong> — rights protection, parliamentary sovereignty</li>
+        <li><strong>Scottish independence referendum ruling, 2022</strong> — devolution, parliamentary sovereignty</li>
+        <li><strong>Section 35 / Scottish Gender Recognition Reform Bill, 2023</strong> — devolution tension</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2019</span><span class="subtopic">Rule of Law</span></div><div class="card-title">Miller v Prime Minister 2019 — Prorogation Ruled Unlawful</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled Boris Johnson's prorogation of Parliament was unlawful, holding that prorogation would be unlawful if it prevented Parliament from carrying out its constitutional functions without reasonable justification.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Powerful example of the rule of law checking the executive. Also supports the case for a codified constitution by showing uncertainty over the limits of prime ministerial power.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The 2019 prorogation case shows the UK constitution is not purely based on executive dominance; the judiciary can intervene when core constitutional principles such as parliamentary accountability are threatened.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">rule of law</span><span class="tag">judicial power</span><span class="tag">executive limits</span><span class="tag">uncodified constitution</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2022</span><span class="subtopic">Flexibility</span></div><div class="card-title">Dissolution and Calling of Parliament Act 2022 — FTPA Repealed</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Fixed-term Parliaments Act 2011 was repealed only eleven years after passing, restoring the PM's power to request dissolution. Shows how easily constitutional reforms can be reversed.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The 2022 Act shows the flexibility of the UK constitution because Parliament was able to reverse the Fixed-term Parliaments Act 2011 through ordinary legislation.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">flexibility</span><span class="tag">parliamentary sovereignty</span><span class="tag">weak entrenchment</span><span class="tag">executive power</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">1998</span><span class="subtopic">Rights Protection</span></div><div class="card-title">Human Rights Act 1998 — "Bringing Rights Home"</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The HRA made ECHR rights enforceable in UK courts. If legislation conflicts with rights, courts can issue a declaration of incompatibility — but Parliament decides whether to change the law. The Bill of Rights Bill 2022 attempted to repeal the HRA but was scrapped in 2023.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The Human Rights Act strengthens rights protection but does not fully entrench rights because courts cannot strike down Acts of Parliament.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">rights protection</span><span class="tag">parliamentary sovereignty</span><span class="tag">judicial power</span><span class="tag">codified vs uncodified</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2022</span><span class="subtopic">Devolution</span></div><div class="card-title">Scottish Independence Referendum Ruling 2022 — Supreme Court</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The UK Supreme Court ruled unanimously that the Scottish Parliament could not legislate for a second independence referendum without Westminster's approval, as the Union is a reserved matter.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The 2022 Supreme Court ruling showed that the Scottish Parliament remains legally limited because it cannot hold an independence referendum without Westminster's approval.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">devolution</span><span class="tag">parliamentary sovereignty</span><span class="tag">constitutional tension</span><span class="tag">union</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2023</span><span class="subtopic">Devolution Tension</span></div><div class="card-title">Section 35 — Gender Recognition Reform Bill Blocked</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">In January 2023, the UK Government used section 35 of the Scotland Act 1998 to block the Scottish Parliament's Gender Recognition Reform Bill, citing impacts on UK-wide equalities law.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows Westminster retains significant control over devolved legislation when UK-wide law is affected. Supporters saw it as protecting equalities law; critics saw it as undermining devolution.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">devolution tension</span><span class="tag">Westminster power</span><span class="tag">reserved matters</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2005</span><span class="subtopic">Separation of Powers</span></div><div class="card-title">Constitutional Reform Act 2005 — UK Supreme Court Created</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Act created the UK Supreme Court (opened 2009) and removed the Law Lords from the House of Lords, strengthening the separation between judiciary and legislature.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Strengthened judicial independence and the separation of powers. However, the UK still has a fused executive and legislature because ministers sit in Parliament.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">separation of powers</span><span class="tag">judicial independence</span><span class="tag">constitutional reform</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PARLIAMENT -->
+  <div class="paper-header p2" data-paper="p2">
+    <div class="paper-label">Paper 2 — UK Government</div>
+    <h2>Parliament</h2>
+  </div>
+
+  <div class="topic" data-paper="p2">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Labour majority, 2024</strong> — Commons legitimacy and executive dominance</li>
+        <li><strong>Theresa May's Brexit defeats, 2017–19</strong> — Commons power when government is weak</li>
+        <li><strong>Safety of Rwanda Bill, 2024</strong> — Lords scrutiny and parliamentary ping pong</li>
+        <li><strong>House of Lords Act 1999</strong> — Lords reform, incomplete legitimacy</li>
+        <li><strong>Liaison Committee</strong> — detailed PM scrutiny beyond PMQs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2024</span><span class="subtopic">Executive Dominance</span></div><div class="card-title">Labour's Large Commons Majority — 2024</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Labour won 411 seats to the Conservatives' 121, giving Starmer a large Commons majority and control over most Commons business and the legislative timetable.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the executive often dominates Parliament when it has a large majority. However, scrutiny tools still operate — select committees, urgent questions and Lords amendments continue to provide checks.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">executive dominance</span><span class="tag">government mandate</span><span class="tag">FPTP and majorities</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2017–19</span><span class="subtopic">Commons Power</span></div><div class="card-title">Theresa May's Brexit Defeats — Parliament Limits the Executive</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">May's government suffered repeated rebellions and defeats after losing its majority in 2017. Her Brexit deal was rejected multiple times in 2019.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">Theresa May's Brexit defeats show that the Commons can be powerful when the government lacks a stable majority and party unity breaks down.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Commons power</span><span class="tag">backbench rebellions</span><span class="tag">weak government</span><span class="tag">limits on executive</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2024</span><span class="subtopic">Lords Scrutiny</span></div><div class="card-title">Safety of Rwanda Bill 2024 — Parliamentary Ping Pong</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Rwanda Bill went through multiple rounds of ping pong between the Commons and Lords before completing its passage in April 2024. The Lords made amendments; the Commons ultimately insisted on the government's position.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The Rwanda Bill shows the Lords' ability to revise and delay legislation, but also the final supremacy of the elected Commons.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Lords scrutiny</span><span class="tag">ping pong</span><span class="tag">Commons supremacy</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">1999</span><span class="subtopic">Lords Reform</span></div><div class="card-title">House of Lords Act 1999 — Most Hereditary Peers Removed</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Act removed most hereditary peers, leaving 92 as a temporary compromise. Labour's 2024 House of Lords (Hereditary Peers) Bill sought to remove the remaining 92, though by April 2026 reports suggested some were being appointed as life peers as a compromise.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The House of Lords Act 1999 improved legitimacy by removing most hereditary peers, but reform remains incomplete because 92 were allowed to remain.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Lords reform</span><span class="tag">legitimacy</span><span class="tag">hereditary peers</span><span class="tag">incomplete reform</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">Ongoing</span><span class="subtopic">Scrutiny</span></div><div class="card-title">Select Committees and the Liaison Committee</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Select committees examine government departments through policy, spending and administration scrutiny. The Liaison Committee (made up of select committee chairs) questions the PM — sessions have been held since 2002 and provide calmer, more detailed scrutiny than PMQs.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The Liaison Committee gives more detailed scrutiny of the Prime Minister than PMQs because committee chairs can question the PM in a calmer, more thorough setting.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">scrutiny</span><span class="tag">select committees</span><span class="tag">Parliament checking executive</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PM AND EXECUTIVE -->
+  <div class="paper-header p2" data-paper="p2">
+    <div class="paper-label">Paper 2 — UK Government</div>
+    <h2>Prime Minister &amp; the Executive</h2>
+  </div>
+
+  <div class="topic" data-paper="p2">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Boris Johnson 2019–22</strong> — presidentialisation and its limits</li>
+        <li><strong>Theresa May and Brexit</strong> — weak PM, Cabinet divisions</li>
+        <li><strong>Liz Truss 2022</strong> — economic constraints, anti-presidential argument</li>
+        <li><strong>Keir Starmer 2024–25</strong> — majority power, appointment powers</li>
+        <li><strong>Miller 2019</strong> — judicial limits on PM</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2019–22</span><span class="subtopic">PM Power</span></div><div class="card-title">Boris Johnson — Large Majority Then Resignation</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Johnson won an 80-seat majority in 2019 and passed Brexit legislation quickly. He resigned in July 2022 after mass ministerial resignations following the Partygate scandal.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">Johnson's 2019 majority showed the strength of a PM with electoral authority, but his 2022 resignation showed that a PM remains dependent on party and ministerial support.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">presidentialisation</span><span class="tag">large majority</span><span class="tag">party support</span><span class="tag">limits on PM</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2022</span><span class="subtopic">Limits on PM</span></div><div class="card-title">Liz Truss — Resigned After 49 Days</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Truss resigned after only 49 days as Prime Minister after her mini-budget triggered market turmoil and a collapse in political authority.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">Liz Truss' resignation after 49 days shows that Prime Ministers are not presidential because they can be removed quickly if they lose political and economic confidence.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">limits on PM</span><span class="tag">economic constraints</span><span class="tag">anti-presidential argument</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2023</span><span class="subtopic">Ministerial Responsibility</span></div><div class="card-title">Dominic Raab Resignation 2023 — Individual Ministerial Responsibility</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Raab resigned as Deputy PM and Justice Secretary in 2023 after an investigation into bullying allegations found against him.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows individual ministerial responsibility still exists when a minister's personal conduct becomes politically damaging. However, resignation is not automatic — it depends on the PM's judgement and political context.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">individual ministerial responsibility</span><span class="tag">accountability</span><span class="tag">Ministerial Code</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2025</span><span class="subtopic">Reshuffle Power</span></div><div class="card-title">Starmer's 2025 Reshuffle — Appointment Power</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">In September 2025, Keir Starmer carried out the biggest reshuffle of his premiership, with David Lammy replacing Angela Rayner as Deputy Prime Minister (Institute for Government).</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">The power to appoint, dismiss and reshuffle ministers is one of the PM's most important powers. If triggered by scandal or party pressure, a reshuffle may show the PM reacting to events rather than controlling them.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">appointment power</span><span class="tag">PM power</span><span class="tag">executive control</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RELATIONS BETWEEN BRANCHES -->
+  <div class="paper-header p2" data-paper="p2">
+    <div class="paper-label">Paper 2 — UK Government</div>
+    <h2>Relations Between Branches</h2>
+  </div>
+
+  <div class="topic" data-paper="p2">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Miller 2017</strong> — Parliament vs executive, Article 50</li>
+        <li><strong>Miller 2019</strong> — judiciary vs executive, prorogation</li>
+        <li><strong>Scottish independence referendum ruling 2022</strong> — devolution, parliamentary sovereignty</li>
+        <li><strong>Human Rights Act 1998</strong> — courts and Parliament, limits of judicial power</li>
+        <li><strong>Retained EU Law Act 2023</strong> — Brexit, executive power, secondary legislation</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2017</span><span class="subtopic">Parliament vs Executive</span></div><div class="card-title">Miller v Secretary of State 2017 — Article 50 Needed Parliamentary Authorisation</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled the government could not trigger Article 50 using prerogative powers alone — Parliament had to authorise it through legislation.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">Miller 2017 showed the Supreme Court defending Parliament's role by ruling that the executive could not trigger Article 50 without parliamentary authorisation.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Parliament vs executive</span><span class="tag">Article 50</span><span class="tag">parliamentary sovereignty</span><span class="tag">Supreme Court</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p2"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p2">2023</span><span class="subtopic">Brexit / Executive Power</span></div><div class="card-title">Retained EU Law (Revocation and Reform) Act 2023</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Act gave ministers wide powers to change EU-derived law. Nearly 600 pieces of EU-derived legislation were revoked at the end of 2023 — often through secondary legislation with less parliamentary scrutiny.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p2">The Retained EU Law Act 2023 shows that Brexit restored legal sovereignty to Parliament but also gave ministers wide powers to change EU-derived law, raising concerns about executive dominance.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">EU and Parliament</span><span class="tag">Brexit</span><span class="tag">executive power</span><span class="tag">secondary legislation</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== PAPER 3 ===== -->
+
+  <div class="paper-header p3" data-paper="p3">
+    <div class="paper-label">Paper 3 — Comparative Topics</div>
+    <h2>US Congress</h2>
+  </div>
+
+  <div class="topic" data-paper="p3">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Kevin McCarthy removed as Speaker, 2023</strong> — party factionalism, weak congressional leadership</li>
+        <li><strong>Trump impeachments, 2019 and 2021</strong> — checks and balances, limits of impeachment</li>
+        <li><strong>Ketanji Brown Jackson confirmation, 2022</strong> — Senate confirmation power</li>
+        <li><strong>January 6th Committee, 2022</strong> — committee oversight, partisanship</li>
+        <li><strong>Biden and divided government after 2022</strong> — gridlock, Congress limiting President</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2023</span><span class="subtopic">House Instability</span></div><div class="card-title">Kevin McCarthy Removed as Speaker — October 2023</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">McCarthy became the first Speaker removed by a House vote on 3 October 2023 (House official records). Mike Johnson was elected Speaker on 25 October 2023.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p3">McCarthy's removal in 2023 shows that congressional party leaders can be much weaker than UK party leaders because factions and individual representatives are harder to control.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">party factionalism</span><span class="tag">House instability</span><span class="tag">narrow majorities</span><span class="tag">US–UK comparison</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2019 &amp; 2021</span><span class="subtopic">Impeachment</span></div><div class="card-title">Trump Impeached Twice — Acquitted Both Times</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The House impeached Trump in 2019 (Ukraine) and again in 2021 (January 6th). Both Senate trials ended in acquittal (Senate official records).</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p3">Trump's two impeachments show Congress can formally check the President, but his acquittals show that removal is difficult because conviction requires a two-thirds Senate majority.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">checks and balances</span><span class="tag">House power</span><span class="tag">limits of impeachment</span><span class="tag">partisanship</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2022</span><span class="subtopic">Senate Confirmation</span></div><div class="card-title">Ketanji Brown Jackson Confirmed to Supreme Court — 53–47</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Biden nominated Jackson; the Senate confirmed her 53–47 in April 2022 after Senate Judiciary Committee hearings.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p3">Biden's nomination of Ketanji Brown Jackson shows presidential appointment power, but her Senate confirmation shows that Congress checks this power.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Senate confirmation</span><span class="tag">appointments</span><span class="tag">checks on President</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2022</span><span class="subtopic">Committee Oversight</span></div><div class="card-title">January 6th Committee — Congressional Investigation</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The House Select Committee released its final report on 22 December 2022 (GovInfo official records), investigating the Capitol attack and Trump's actions after the 2020 election.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows Congress's investigatory power, but Republicans largely rejected the committee's conclusions — showing how partisan divisions can weaken oversight effectiveness.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">committee oversight</span><span class="tag">investigation</span><span class="tag">partisanship</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2022–24</span><span class="subtopic">Divided Government</span></div><div class="card-title">Biden and Divided Government After 2022 Midterms</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Republicans gained control of the House after the 2022 midterms, making major Biden legislation harder to pass and increasing congressional investigations into his administration.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p3">Biden's difficulties after Republicans won the House in 2022 show how divided government can limit presidential law-making and increase gridlock.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">gridlock</span><span class="tag">divided government</span><span class="tag">separation of powers</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- US CONSTITUTION -->
+  <div class="paper-header p3" data-paper="p3">
+    <div class="paper-label">Paper 3 — Comparative Topics</div>
+    <h2>US Constitution</h2>
+  </div>
+
+  <div class="topic" data-paper="p3">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Article V amendment process</strong> — entrenchment, rigidity, comparison with UK</li>
+        <li><strong>Dobbs v Jackson, 2022</strong> — Supreme Court power, federalism, rights</li>
+        <li><strong>Trump v United States, 2024</strong> — presidential power, checks and balances</li>
+        <li><strong>Brown v Board of Education, 1954</strong> — civil rights, judicial review</li>
+        <li><strong>Equal Rights Amendment failed</strong> — amendment difficulty, rigidity</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">1787</span><span class="subtopic">Codified &amp; Entrenched</span></div><div class="card-title">The US Constitution — Codified and Entrenched Under Article V</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Written in 1787, the Constitution sets out the powers of all three branches and protects rights through the Bill of Rights. Article V means amendments require two-thirds of Congress and ratification by three-quarters of states. Only 27 amendments have ever been ratified.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Contrasts with the UK's uncodified, flexible constitution. Entrenchment protects stability but makes reform very difficult, pushing political conflict into the Supreme Court.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">codified constitution</span><span class="tag">entrenchment</span><span class="tag">rigidity</span><span class="tag">US–UK comparison</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2022</span><span class="subtopic">Federalism / Rights</span></div><div class="card-title">Dobbs v Jackson 2022 — Roe v Wade Overturned</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court upheld Mississippi's 15-week abortion law and overturned Roe v Wade and Planned Parenthood v Casey, returning abortion law largely to individual states.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Supreme Court's power to reinterpret the Constitution and overturn precedent. Can be argued as judicial restraint (returning to states) or activism (removing 50 years of protection). Also a key federalism example.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Supreme Court power</span><span class="tag">federalism</span><span class="tag">judicial activism/restraint</span><span class="tag">rights protection</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2024</span><span class="subtopic">Presidential Power</span></div><div class="card-title">Trump v United States 2024 — Presidential Immunity Defined</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled Presidents have absolute immunity for core constitutional powers, presumptive immunity for official acts, and no immunity for unofficial acts.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Supreme Court defining presidential accountability. Supporters argue immunity protects decisive action; critics argue it risks placing presidents above ordinary legal accountability.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">presidential power</span><span class="tag">checks and balances</span><span class="tag">rule of law</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">1972</span><span class="subtopic">Amendment Difficulty</span></div><div class="card-title">Equal Rights Amendment — Failed to Be Ratified</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The ERA passed Congress in 1972 but was not ratified by enough states before the deadline.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows how difficult it is to formally amend the US Constitution, pushing political conflict into the courts rather than the amendment process.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">amendment difficulty</span><span class="tag">rigidity</span><span class="tag">constitutional reform</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- US DEMOCRACY -->
+  <div class="paper-header p3" data-paper="p3">
+    <div class="paper-label">Paper 3 — Comparative Topics</div>
+    <h2>US Democracy &amp; Participation</h2>
+  </div>
+
+  <div class="topic" data-paper="p3">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>2024 presidential election</strong> — turnout, Electoral College, competitive elections</li>
+        <li><strong>Citizens United v FEC, 2010</strong> — campaign finance, Super PACs</li>
+        <li><strong>Shelby County v Holder, 2013</strong> — voting rights, federalism</li>
+        <li><strong>Voting restrictions after 2020</strong> — voting access, state power</li>
+        <li><strong>Abortion ballot measures after Dobbs</strong> — direct democracy, federalism</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2024</span><span class="subtopic">Presidential Election</span></div><div class="card-title">2024 Presidential Election — Trump Defeats Harris</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Trump won 312 Electoral College votes to Harris's 226, and also won the national popular vote. Turnout was approximately 64% (University of Florida Election Lab).</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows high participation and competitive democracy. However, campaigns focused disproportionately on swing states, showing the Electoral College's distorting effect.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">presidential elections</span><span class="tag">Electoral College</span><span class="tag">turnout</span><span class="tag">swing states</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2016</span><span class="subtopic">Electoral College</span></div><div class="card-title">2016 Election — Trump Won Despite Losing Popular Vote</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Hillary Clinton won the national popular vote but Trump won the Electoral College and therefore the presidency.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Electoral College can produce outcomes that do not reflect the national popular majority. Supporters argue it protects federalism; critics argue it distorts democracy.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">Electoral College</span><span class="tag">democratic legitimacy</span><span class="tag">federalism</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2010</span><span class="subtopic">Campaign Finance</span></div><div class="card-title">Citizens United v FEC 2010 — Super PACs and Political Spending</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled restrictions on independent political spending by corporations and unions violated the First Amendment, expanding the influence of Super PACs.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows how the Supreme Court expanded the role of money in US elections by treating political spending as protected speech. Critics argue it gives wealthy donors too much influence.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">campaign finance</span><span class="tag">Super PACs</span><span class="tag">free speech</span><span class="tag">unequal influence</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">Post-2020</span><span class="subtopic">Voting Rights</span></div><div class="card-title">Restrictive Voting Laws After 2020 — 110 Laws in 30 States</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Brennan Center reports at least 30 states enacted 110 restrictive voting laws since the 2020 election. In 2025, states enacted 32 restrictive and 30 expansive voting laws.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows voting access varies dramatically across the US due to federalism. US democracy is not moving in only one direction — some states restrict access while others expand it.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">voting restrictions</span><span class="tag">federalism</span><span class="tag">participation barriers</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">Post-2022</span><span class="subtopic">Direct Democracy</span></div><div class="card-title">Abortion Ballot Measures After Dobbs</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">After Dobbs returned abortion policy to the states, several states used ballot measures to decide whether abortion rights should be protected or restricted.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows direct democracy at state level — citizens voted directly on rights issues. Also shows federalism creating unequal rights between states.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">direct democracy</span><span class="tag">federalism</span><span class="tag">state-level participation</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- US PRESIDENT -->
+  <div class="paper-header p3" data-paper="p3">
+    <div class="paper-label">Paper 3 — Comparative Topics</div>
+    <h2>The US President</h2>
+  </div>
+
+  <div class="topic" data-paper="p3">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Trump's executive orders, 2025</strong> — informal power, bypassing Congress</li>
+        <li><strong>Biden after the 2022 midterms</strong> — divided government, limits on President</li>
+        <li><strong>Ketanji Brown Jackson confirmation, 2022</strong> — appointment power, Senate checks</li>
+        <li><strong>Trump impeachments</strong> — checks and balances, limits of accountability</li>
+        <li><strong>Trump v United States, 2024</strong> — presidential immunity, Supreme Court</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2025</span><span class="subtopic">Executive Orders</span></div><div class="card-title">Trump Signed 225 Executive Orders in 2025</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Federal Register records Trump signed 225 executive orders in 2025 (EO 14147 to EO 14371), allowing rapid policy direction without new congressional legislation.</div></div>
+        <div class="detail-row"><div class="detail-label">Essay-Ready Sentence</div><div class="essay-box p3">Trump's 225 executive orders in 2025 show how Presidents can use executive action to pursue policy quickly without waiting for Congress.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">informal power</span><span class="tag">bypassing Congress</span><span class="tag">imperial presidency</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2015</span><span class="subtopic">Executive Agreements</span></div><div class="card-title">Obama and the Iran Nuclear Deal (JCPOA)</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Obama used an executive agreement rather than a formal treaty to avoid Senate two-thirds ratification. Trump withdrew from the deal in 2018.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Executive agreements increase presidential power by bypassing Senate ratification. However, they are less secure — a later President can reverse them.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">executive agreements</span><span class="tag">foreign policy</span><span class="tag">Senate checks</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">First Term</span><span class="subtopic">Long-Term Power</span></div><div class="card-title">Trump's Three Supreme Court Appointments</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">Trump appointed Gorsuch, Kavanaugh and Barrett during his first term, helping create the conservative majority that decided Dobbs v Jackson, 2022.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Supreme Court appointments are one of the President's most long-lasting powers because justices serve for life. However, appointments require Senate confirmation.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">appointment power</span><span class="tag">long-term power</span><span class="tag">Supreme Court</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SUPREME COURT -->
+  <div class="paper-header p3" data-paper="p3">
+    <div class="paper-label">Paper 3 — Comparative Topics</div>
+    <h2>Supreme Court &amp; Civil Rights</h2>
+  </div>
+
+  <div class="topic" data-paper="p3">
+
+    <div class="examiner-box">
+      <h3>🎯 Key Examples to Prioritise</h3>
+      <ul>
+        <li><strong>Brown v Board of Education, 1954</strong> — civil rights, judicial activism, Fourteenth Amendment</li>
+        <li><strong>Dobbs v Jackson, 2022</strong> — abortion, federalism, overturning precedent</li>
+        <li><strong>Students for Fair Admissions v Harvard, 2023</strong> — affirmative action, equal protection</li>
+        <li><strong>Shelby County v Holder, 2013</strong> — voting rights, state power</li>
+        <li><strong>United States v Skrmetti, 2025</strong> — transgender rights, equal protection</li>
+        <li><strong>Louisiana v Callais, 2026</strong> — current voting rights (source: Reuters)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">1954</span><span class="subtopic">Race / Civil Rights</span></div><div class="card-title">Brown v Board of Education 1954 — School Segregation Unconstitutional</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled racial segregation in public schools unconstitutional under the Equal Protection Clause of the Fourteenth Amendment.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">One of the strongest examples of the Supreme Court protecting civil rights through judicial review. However, implementation was slow — showing the Court depends on other branches and state governments to enforce decisions.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">civil rights</span><span class="tag">race</span><span class="tag">judicial activism</span><span class="tag">Fourteenth Amendment</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2022</span><span class="subtopic">Abortion / Federalism</span></div><div class="card-title">Dobbs v Jackson 2022 — Roe v Wade Overturned</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Court upheld Mississippi's 15-week abortion law and overturned Roe v Wade, returning abortion law to individual states.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Court's power to reinterpret the Constitution and overturn precedent. Can be argued as judicial restraint (returning to states) or activism (removing 50 years of protection).</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">abortion</span><span class="tag">federalism</span><span class="tag">judicial activism/restraint</span><span class="tag">Supreme Court power</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2023</span><span class="subtopic">Affirmative Action</span></div><div class="card-title">Students for Fair Admissions v Harvard 2023 — Affirmative Action Restricted</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Court ruled against race-conscious admissions policies at Harvard and UNC, holding that the use of race in admissions failed strict scrutiny under equal protection principles.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the conservative Court taking a more restrictive approach to racial equality. Supporters argue it protects colour-blind equality; critics argue it weakens efforts to address structural inequality.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">affirmative action</span><span class="tag">race</span><span class="tag">equal protection</span><span class="tag">conservative Court</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2015</span><span class="subtopic">LGBTQ+ Rights</span></div><div class="card-title">Obergefell v Hodges 2015 — Same-Sex Marriage Legalised</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled same-sex couples have a constitutional right to marry under the Fourteenth Amendment.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Supreme Court expanding civil rights through constitutional interpretation. Critics argued it was judicial activism because marriage law had traditionally been left to states.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">LGBTQ+ rights</span><span class="tag">same-sex marriage</span><span class="tag">Fourteenth Amendment</span><span class="tag">judicial activism</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2025</span><span class="subtopic">Transgender Rights</span></div><div class="card-title">United States v Skrmetti 2025 — Tennessee Transgender Restrictions Upheld</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court upheld Tennessee's restrictions on certain medical care for transgender minors 6–3 in June 2025 (SCOTUSblog), considering whether the law violated the Equal Protection Clause.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the conservative Court allowing states more freedom over transgender healthcare. Supporters argue it left policy to elected legislatures; critics argue it failed to protect a vulnerable minority.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">LGBTQ+ rights</span><span class="tag">transgender rights</span><span class="tag">Equal Protection Clause</span><span class="tag">judicial restraint</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2013</span><span class="subtopic">Voting Rights</span></div><div class="card-title">Shelby County v Holder 2013 — Preclearance Weakened</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court struck down the formula used to decide which states needed federal preclearance before changing voting laws, weakening key provisions of the Voting Rights Act 1965.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows how Supreme Court decisions can affect participation. Supporters argued the old formula was outdated; critics argue the ruling made it easier for states to introduce restrictive voting laws.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">voting rights</span><span class="tag">race</span><span class="tag">federalism</span><span class="tag">state power</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2026</span><span class="subtopic">Voting Rights</span></div><div class="card-title">Louisiana v Callais 2026 — Section 2 Voting Rights Act Weakened ⚠️</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">According to Reuters, the Supreme Court issued a 6–3 ruling in April 2026 that significantly weakened Section 2 of the Voting Rights Act by making racial vote dilution claims harder to prove.</div></div>
+        <div class="detail-row"><div class="detail-label">⚠️ Careful Wording</div><div class="detail-text">Phrase this as: "According to Reuters, the ruling significantly weakened Section 2…" — this information comes from news reporting rather than a verified official judgment text.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">voting rights</span><span class="tag">racial gerrymandering</span><span class="tag">Section 2</span><span class="tag">conservative Court</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top p3"><div class="card-top-meta"><div class="card-badges"><span class="year-badge p3">2024</span><span class="subtopic">Democracy / Ballot Access</span></div><div class="card-title">Trump v Anderson 2024 — States Could Not Remove Trump from Ballot</div></div></div>
+      <div class="card-body">
+        <div class="detail-row"><div class="detail-label">The Example</div><div class="detail-text">The Supreme Court ruled states could not unilaterally remove Trump from the presidential ballot under Section 3 of the Fourteenth Amendment, reversing the Colorado Supreme Court's decision.</div></div>
+        <div class="detail-row"><div class="detail-label">Why It's Relevant</div><div class="detail-text">Shows the Supreme Court shaping democratic participation by deciding ballot access. Supporters argued the ruling protected national electoral consistency; critics argued it limited states' ability to enforce the Fourteenth Amendment.</div></div>
+        <div class="detail-row"><div class="detail-label">Best For</div><div class="tags"><span class="tag">democracy</span><span class="tag">ballot access</span><span class="tag">Fourteenth Amendment</span><span class="tag">federalism</span></div></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function filterPaper(paper) {
+    document.querySelectorAll('.topic').forEach(t => {
+      t.dataset.hidden = t.dataset.paper !== paper ? 'true' : 'false';
+    });
+    document.querySelectorAll('.paper-header').forEach(h => {
+      h.style.display = h.dataset.paper !== paper ? 'none' : '';
+    });
+  }
+
+  function showAll() {
+    document.querySelectorAll('.topic').forEach(t => {
+      t.dataset.hidden = 'false';
+    });
+    document.querySelectorAll('.paper-header').forEach(h => {
+      h.style.display = '';
+    });
+  }
+</script>
+
+</body>
+</html>
